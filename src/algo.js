@@ -9,8 +9,9 @@ function meanTime(){
     //console.log(hrend[1]/1000000)
     console.log(mean)
   } var total = 0
-  mean.shift()
-  mean.shift()
+  for (var i = 0; i < 2; i++){
+      mean.shift()
+  }
   console.log(mean)
   for (var i = 0; i < mean.length; i++){
     total += mean[i]

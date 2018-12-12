@@ -26,36 +26,36 @@
 <body>
 
 <form id="form">
-  <label for="eq">Enter the values for y:</label>
-  <input type="text" id="yvalues" value="" />
-  <label for="eq">Enter the values for x:</label>
-  <input type="text" id="xvalues" value="" />
+  <label for="eq">Enter the time taken for an array of:</label>
+  <input type="text" placeholder="10, 100, 1000, 1500" id="yvalues" value="" />
+  <!-- <label for="eq">Enter the values for x:</label>
+  <input type="text" id="xvalues" value="" /> -->
   <input type="submit" value="Draw" />
 </form>
 
 
 <div id="plot"></div>
 
-<p>
+<!--<p>
   Used plot library: <a href="https://plot.ly/javascript/">Plotly</a>
-</p>
+</p> -->
 
 <script>
   function draw() {
     try {
       // compile the expression once
       const yvalues = document.getElementById('yvalues').value
-      const xvalues = document.getElementById('xvalues').value
+      //const xvalues = document.getElementById('xvalues').value
       yvalues_array = yvalues.split(',')
-      xvalues_array = xvalues.split(',')
+      //xvalues_array = xvalues.split(',')
       yvalues_array = yvalues_array.map(function(y){
         return(parseFloat(y))
       })
-      xvalues_array = xvalues_array.map(function(x){
-        return(parseFloat(x))
-      })
+      //xvalues_array = xvalues_array.map(function(x){
+      //  return(parseFloat(x))
+      //})
       console.log(yvalues_array)
-      console.log(typeof(xvalues_array))
+      //console.log(typeof(xvalues_array))
       //const expr = math.compile(expression)
 
       // evaluate the expression repeatedly for different values of x
@@ -66,8 +66,9 @@
 
       // render the plot using plotly
       const trace1 = {
-        x: xvalues_array,
+        x: [10, 100, 1000, 1500],
         y: yvalues_array,
+        mode: 'markers',
         type: 'scatter'
       }
       const data = [trace1]
