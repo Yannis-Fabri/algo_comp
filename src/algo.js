@@ -1,13 +1,9 @@
 var array = []
 var mean = []
-//var hrstart = process.hrtime()
-
 
 function meanTime(){
   for (var i=1;i<=10; i++) {
-    //console.time(arraySize())
-    arraySize()
-    //console.timeEnd(arraySize())
+    arraySizeMil()
     hrend = process.hrtime(hrstart)
     mean.push(hrend[1])
     //console.log(hrend[1]/1000000)
@@ -23,7 +19,7 @@ function meanTime(){
   console.log(mavg.toFixed(6))
 }
 
-function arraySize(){
+function arraySizeMil(){
   hrstart = process.hrtime()
   array = [1]
   for (var i = 0; i < 1000000; i++){
